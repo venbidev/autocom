@@ -1,0 +1,334 @@
+2025-04-11 20:38:14,680 - telethon.crypto.aes - INFO - libssl detected, it will be used for encryption
+2025-04-11 20:38:15,783 - __main__ - INFO - Запуск бота...
+2025-04-11 20:38:15,784 - __main__ - INFO - Токен бота получен, первые 5 символов: 79649...
+2025-04-11 20:38:15,784 - __main__ - ERROR - Ошибка подключения к БД: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-04-11 20:53:08,137 - telethon.crypto.aes - INFO - libssl detected, it will be used for encryption
+2025-04-11 20:53:08,660 - __main__ - INFO - Запуск бота...
+2025-04-11 20:53:08,660 - __main__ - INFO - Токен бота получен, первые 5 символов: 79649...
+2025-04-11 20:53:14,093 - __main__ - INFO - Подключение к БД успешно: 1
+2025-04-11 20:53:14,332 - __main__ - INFO - Начинаю поллинг бота...
+2025-04-11 20:53:14,334 - aiogram.dispatcher - INFO - Start polling
+2025-04-11 20:53:15,058 - aiogram.dispatcher - INFO - Run polling for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 20:53:27,824 - aiogram.event - INFO - Update id=427623276 is not handled. Duration 999 ms by bot id=7964977314
+2025-04-11 20:53:27,825 - aiogram.event - ERROR - Cause exception while process update id=427623276 by bot id=7964977314
+DetachedInstanceError: Instance <User at 0x116bceb10> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+Traceback (most recent call last):
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/dispatcher/middlewares/user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/fsm/middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/dispatcher/dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/dispatcher/router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/dispatcher/event/telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/aiogram/dispatcher/event/handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/bot/main.py", line 190, in start_cmd
+    welcome_text += f"Ваш баланс: {user.balance} руб.\n"
+                                   ^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 566, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 1086, in get
+    value = self._fire_loader_callables(state, key, passive)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py", line 1116, in _fire_loader_callables
+    return state._load_expired(state, passive)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/sqlalchemy/orm/state.py", line 803, in _load_expired
+    self.manager.expired_attribute_loader(self, toload, passive)
+  File "/Users/vladimir/Desktop/autocom/.venv/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 1603, in load_scalar_attributes
+    raise orm_exc.DetachedInstanceError(
+sqlalchemy.orm.exc.DetachedInstanceError: Instance <User at 0x116bceb10> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+2025-04-11 20:55:40,501 - aiogram.dispatcher - WARNING - Received SIGINT signal
+2025-04-11 20:55:40,512 - aiogram.dispatcher - INFO - Polling stopped for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 20:55:40,513 - aiogram.dispatcher - INFO - Polling stopped
+2025-04-11 20:55:47,923 - telethon.crypto.aes - INFO - libssl detected, it will be used for encryption
+2025-04-11 20:55:48,442 - __main__ - INFO - Запуск бота...
+2025-04-11 20:55:48,443 - __main__ - INFO - Токен бота получен, первые 5 символов: 79649...
+2025-04-11 20:55:54,201 - __main__ - INFO - Подключение к БД успешно: 1
+2025-04-11 20:55:54,460 - __main__ - INFO - Начинаю поллинг бота...
+2025-04-11 20:55:54,461 - aiogram.dispatcher - INFO - Start polling
+2025-04-11 20:55:55,003 - aiogram.dispatcher - INFO - Run polling for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 20:56:02,487 - aiogram.event - INFO - Update id=427623277 is handled. Duration 1626 ms by bot id=7964977314
+2025-04-11 20:56:14,668 - aiogram.event - INFO - Update id=427623278 is not handled. Duration 4 ms by bot id=7964977314
+2025-04-11 20:56:24,630 - aiogram.event - INFO - Update id=427623279 is handled. Duration 979 ms by bot id=7964977314
+2025-04-11 20:56:26,680 - aiogram.event - INFO - Update id=427623280 is not handled. Duration 15 ms by bot id=7964977314
+2025-04-11 20:56:28,257 - aiogram.event - INFO - Update id=427623281 is not handled. Duration 10 ms by bot id=7964977314
+2025-04-11 20:56:34,463 - aiogram.event - INFO - Update id=427623282 is handled. Duration 955 ms by bot id=7964977314
+2025-04-11 20:56:37,107 - aiogram.event - INFO - Update id=427623283 is handled. Duration 1694 ms by bot id=7964977314
+2025-04-11 20:56:48,015 - aiogram.event - INFO - Update id=427623284 is handled. Duration 6384 ms by bot id=7964977314
+2025-04-11 20:56:58,017 - aiogram.event - INFO - Update id=427623285 is handled. Duration 216 ms by bot id=7964977314
+2025-04-11 20:57:01,906 - aiogram.event - INFO - Update id=427623286 is handled. Duration 216 ms by bot id=7964977314
+2025-04-11 20:57:35,304 - userbot_manager - ERROR - Файл сессии /Users/vladimir/Desktop/autocom/adminbot/sessions/https://bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982.s3.us-east-1.amazonaws.com/sessions/user1.session.session не найден
+2025-04-11 20:57:36,902 - aiogram.event - INFO - Update id=427623287 is handled. Duration 2405 ms by bot id=7964977314
+2025-04-11 21:04:05,936 - aiogram.dispatcher - WARNING - Received SIGINT signal
+2025-04-11 21:04:05,944 - aiogram.dispatcher - INFO - Polling stopped for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 21:04:05,946 - aiogram.dispatcher - INFO - Polling stopped
+2025-04-11 21:04:13,652 - telethon.crypto.aes - INFO - libssl detected, it will be used for encryption
+2025-04-11 21:04:14,775 - __main__ - INFO - Запуск бота...
+2025-04-11 21:04:14,775 - __main__ - INFO - Токен бота получен, первые 5 символов: 79649...
+2025-04-11 21:04:19,643 - __main__ - INFO - Подключение к БД успешно: 1
+2025-04-11 21:04:19,892 - __main__ - INFO - Начинаю поллинг бота...
+2025-04-11 21:04:19,893 - aiogram.dispatcher - INFO - Start polling
+2025-04-11 21:04:20,626 - aiogram.dispatcher - INFO - Run polling for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 21:05:04,281 - aiogram.event - INFO - Update id=427623288 is handled. Duration 1129 ms by bot id=7964977314
+2025-04-11 21:05:11,824 - aiogram.event - INFO - Update id=427623289 is handled. Duration 3117 ms by bot id=7964977314
+2025-04-11 21:05:15,393 - aiogram.event - INFO - Update id=427623290 is handled. Duration 1817 ms by bot id=7964977314
+2025-04-11 21:05:28,653 - aiogram.event - INFO - Update id=427623291 is handled. Duration 6633 ms by bot id=7964977314
+2025-04-11 21:05:33,209 - aiogram.event - INFO - Update id=427623292 is handled. Duration 204 ms by bot id=7964977314
+2025-04-11 21:05:34,851 - aiogram.event - INFO - Update id=427623293 is handled. Duration 208 ms by bot id=7964977314
+2025-04-11 21:05:42,204 - userbot_manager - ERROR - Файл сессии /Users/vladimir/Desktop/autocom/adminbot/sessions/https://bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982.s3.us-east-1.amazonaws.com/sessions/user1.session.session не найден
+2025-04-11 21:05:43,539 - aiogram.event - INFO - Update id=427623294 is handled. Duration 2170 ms by bot id=7964977314
+2025-04-11 21:10:12,105 - aiogram.dispatcher - WARNING - Received SIGINT signal
+2025-04-11 21:10:12,107 - aiogram.dispatcher - INFO - Polling stopped for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 21:10:12,107 - aiogram.dispatcher - INFO - Polling stopped
+2025-04-11 21:10:18,787 - telethon.crypto.aes - INFO - libssl detected, it will be used for encryption
+2025-04-11 21:10:19,264 - __main__ - INFO - Запуск бота...
+2025-04-11 21:10:19,264 - __main__ - INFO - Токен бота получен, первые 5 символов: 79649...
+2025-04-11 21:10:23,955 - __main__ - INFO - Подключение к БД успешно: 1
+2025-04-11 21:10:24,198 - __main__ - INFO - Начинаю поллинг бота...
+2025-04-11 21:10:24,199 - aiogram.dispatcher - INFO - Start polling
+2025-04-11 21:10:24,867 - aiogram.dispatcher - INFO - Run polling for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 21:13:49,661 - aiogram.event - INFO - Update id=427623295 is handled. Duration 2250 ms by bot id=7964977314
+2025-04-11 21:13:57,605 - aiogram.event - INFO - Update id=427623296 is handled. Duration 6710 ms by bot id=7964977314
+2025-04-11 21:14:01,453 - aiogram.event - INFO - Update id=427623297 is handled. Duration 214 ms by bot id=7964977314
+2025-04-11 21:14:03,168 - aiogram.event - INFO - Update id=427623298 is handled. Duration 224 ms by bot id=7964977314
+2025-04-11 21:14:06,110 - aiogram.event - INFO - Update id=427623299 is handled. Duration 227 ms by bot id=7964977314
+2025-04-11 21:14:10,666 - userbot_manager - INFO - Ищу сессию: user1
+2025-04-11 21:14:10,667 - userbot_manager - INFO - Найден файл сессии: /Users/vladimir/Desktop/autocom/adminbot/sessions/user1.session
+2025-04-11 21:14:10,689 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-04-11 21:14:10,858 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:14:11,575 - userbot_manager - INFO - Успешное подключение к сессии user1
+2025-04-11 21:14:11,767 - userbot_manager - INFO - Юзербот https://bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982.s3.us-east-1.amazonaws.com/sessions/user1.session доступен. ID: 7785962229, Имя: Андрей
+2025-04-11 21:14:11,768 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-04-11 21:14:11,770 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:14:12,495 - userbot_manager - INFO - Ищу сессию: user1
+2025-04-11 21:14:12,496 - userbot_manager - INFO - Найден файл сессии: /Users/vladimir/Desktop/autocom/adminbot/sessions/user1.session
+2025-04-11 21:14:12,497 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-04-11 21:14:12,663 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:14:13,395 - userbot_manager - INFO - Успешное подключение к сессии user1
+2025-04-11 21:14:13,575 - userbot_manager - ERROR - Ошибка при обновлении профиля юзербота https://bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982.s3.us-east-1.amazonaws.com/sessions/user1.session: 'User' object has no attribute 'about'
+2025-04-11 21:14:13,577 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-04-11 21:14:13,584 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:14:13,813 - aiogram.event - INFO - Update id=427623300 is handled. Duration 3873 ms by bot id=7964977314
+2025-04-11 21:14:22,420 - userbot_manager - INFO - Ищу сессию: user1
+2025-04-11 21:14:22,422 - userbot_manager - INFO - Найден файл сессии: /Users/vladimir/Desktop/autocom/adminbot/sessions/user1.session
+2025-04-11 21:14:22,424 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-04-11 21:14:22,594 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:14:23,362 - userbot_manager - INFO - Успешное подключение к сессии user1
+2025-04-11 21:14:23,550 - userbot_manager - INFO - Юзербот https://bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982.s3.us-east-1.amazonaws.com/sessions/user1.session доступен. ID: 7785962229, Имя: Андрей
+2025-04-11 21:14:23,551 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-04-11 21:14:23,552 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:14:24,270 - userbot_manager - INFO - Ищу сессию: user1
+2025-04-11 21:14:24,271 - userbot_manager - INFO - Найден файл сессии: /Users/vladimir/Desktop/autocom/adminbot/sessions/user1.session
+2025-04-11 21:14:24,273 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-04-11 21:14:24,445 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:14:25,241 - userbot_manager - INFO - Успешное подключение к сессии user1
+2025-04-11 21:14:25,419 - userbot_manager - ERROR - Ошибка при обновлении профиля юзербота https://bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982.s3.us-east-1.amazonaws.com/sessions/user1.session: 'User' object has no attribute 'about'
+2025-04-11 21:14:25,419 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-04-11 21:14:25,421 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:14:25,642 - aiogram.event - INFO - Update id=427623301 is handled. Duration 3955 ms by bot id=7964977314
+2025-04-11 21:14:36,881 - userbot_manager - INFO - Ищу сессию: user1
+2025-04-11 21:14:36,881 - userbot_manager - INFO - Найден файл сессии: /Users/vladimir/Desktop/autocom/adminbot/sessions/user1.session
+2025-04-11 21:14:36,883 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-04-11 21:14:37,048 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:14:37,804 - userbot_manager - INFO - Успешное подключение к сессии user1
+2025-04-11 21:14:37,978 - userbot_manager - INFO - Юзербот https://bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982.s3.us-east-1.amazonaws.com/sessions/user1.session доступен. ID: 7785962229, Имя: Андрей
+2025-04-11 21:14:37,978 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-04-11 21:14:37,979 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:14:38,704 - userbot_manager - INFO - Ищу сессию: user1
+2025-04-11 21:14:38,705 - userbot_manager - INFO - Найден файл сессии: /Users/vladimir/Desktop/autocom/adminbot/sessions/user1.session
+2025-04-11 21:14:38,706 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-04-11 21:14:38,877 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:14:39,585 - userbot_manager - INFO - Успешное подключение к сессии user1
+2025-04-11 21:14:39,782 - userbot_manager - ERROR - Ошибка при обновлении профиля юзербота https://bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982.s3.us-east-1.amazonaws.com/sessions/user1.session: 'User' object has no attribute 'about'
+2025-04-11 21:14:39,783 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-04-11 21:14:39,784 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:14:39,983 - aiogram.event - INFO - Update id=427623302 is handled. Duration 3833 ms by bot id=7964977314
+2025-04-11 21:14:52,662 - aiogram.dispatcher - WARNING - Received SIGINT signal
+2025-04-11 21:14:52,663 - aiogram.dispatcher - INFO - Polling stopped for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 21:14:52,663 - aiogram.dispatcher - INFO - Polling stopped
+2025-04-11 21:14:58,850 - telethon.crypto.aes - INFO - libssl detected, it will be used for encryption
+2025-04-11 21:15:00,201 - userbot_manager - INFO - S3 клиент инициализирован для бакета bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982
+2025-04-11 21:15:00,284 - __main__ - INFO - Запуск бота...
+2025-04-11 21:15:00,285 - __main__ - INFO - Токен бота получен, первые 5 символов: 79649...
+2025-04-11 21:15:05,024 - __main__ - INFO - Подключение к БД успешно: 1
+2025-04-11 21:15:05,339 - __main__ - INFO - Начинаю поллинг бота...
+2025-04-11 21:15:05,340 - aiogram.dispatcher - INFO - Start polling
+2025-04-11 21:15:06,012 - aiogram.dispatcher - INFO - Run polling for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 21:15:18,357 - aiogram.event - INFO - Update id=427623303 is handled. Duration 1427 ms by bot id=7964977314
+2025-04-11 21:18:32,622 - aiogram.event - INFO - Update id=427623304 is handled. Duration 2188 ms by bot id=7964977314
+2025-04-11 21:18:39,939 - aiogram.event - INFO - Update id=427623305 is handled. Duration 6211 ms by bot id=7964977314
+2025-04-11 21:18:43,959 - aiogram.event - INFO - Update id=427623306 is handled. Duration 205 ms by bot id=7964977314
+2025-04-11 21:18:46,311 - aiogram.event - INFO - Update id=427623307 is handled. Duration 253 ms by bot id=7964977314
+2025-04-11 21:18:53,128 - userbot_manager - INFO - Получение клиента для сессии: user1
+2025-04-11 21:18:53,136 - userbot_manager - INFO - Загрузка сессии из S3: bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982/sessions/user1.session
+2025-04-11 21:18:55,070 - userbot_manager - INFO - Сессия успешно загружена из S3 во временный файл: /var/folders/zw/21y55d9x22x4vc_rlqjc2xjr0000gn/T/tmpuzq_ue12.session
+2025-04-11 21:18:55,076 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-04-11 21:18:55,250 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:18:56,043 - userbot_manager - INFO - Успешное подключение к сессии user1
+2025-04-11 21:18:56,238 - userbot_manager - INFO - Юзербот https://bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982.s3.us-east-1.amazonaws.com/sessions/user1.session доступен. ID: 7785962229, Имя: Андрей
+2025-04-11 21:18:56,239 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-04-11 21:18:56,242 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:18:57,206 - userbot_manager - INFO - Получение клиента для сессии: user1
+2025-04-11 21:18:57,207 - userbot_manager - INFO - Загрузка сессии из S3: bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982/sessions/user1.session
+2025-04-11 21:18:58,316 - userbot_manager - INFO - Сессия успешно загружена из S3 во временный файл: /var/folders/zw/21y55d9x22x4vc_rlqjc2xjr0000gn/T/tmpjz15hoj0.session
+2025-04-11 21:18:58,318 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-04-11 21:18:58,488 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:18:59,189 - userbot_manager - INFO - Успешное подключение к сессии user1
+2025-04-11 21:18:59,366 - userbot_manager - ERROR - Ошибка при обновлении профиля юзербота https://bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982.s3.us-east-1.amazonaws.com/sessions/user1.session: 'User' object has no attribute 'about'
+2025-04-11 21:18:59,367 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-04-11 21:18:59,368 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:18:59,575 - aiogram.event - INFO - Update id=427623308 is handled. Duration 7203 ms by bot id=7964977314
+2025-04-11 21:19:20,811 - aiogram.event - INFO - Update id=427623309 is handled. Duration 934 ms by bot id=7964977314
+2025-04-11 21:21:26,607 - aiogram.dispatcher - WARNING - Received SIGINT signal
+2025-04-11 21:21:26,608 - aiogram.dispatcher - INFO - Polling stopped for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 21:21:26,609 - aiogram.dispatcher - INFO - Polling stopped
+2025-04-11 21:21:32,718 - telethon.crypto.aes - INFO - libssl detected, it will be used for encryption
+2025-04-11 21:21:33,838 - userbot_manager - INFO - S3 клиент инициализирован для бакета bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982
+2025-04-11 21:21:33,910 - __main__ - INFO - Запуск бота...
+2025-04-11 21:21:33,910 - __main__ - INFO - Токен бота получен, первые 5 символов: 79649...
+2025-04-11 21:21:38,687 - __main__ - INFO - Подключение к БД успешно: 1
+2025-04-11 21:21:38,925 - __main__ - INFO - Начинаю поллинг бота...
+2025-04-11 21:21:38,925 - aiogram.dispatcher - INFO - Start polling
+2025-04-11 21:21:39,594 - aiogram.dispatcher - INFO - Run polling for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 21:21:45,819 - aiogram.event - INFO - Update id=427623310 is handled. Duration 2317 ms by bot id=7964977314
+2025-04-11 21:21:53,524 - aiogram.event - INFO - Update id=427623311 is handled. Duration 6945 ms by bot id=7964977314
+2025-04-11 21:21:57,279 - aiogram.event - INFO - Update id=427623312 is handled. Duration 220 ms by bot id=7964977314
+2025-04-11 21:22:00,835 - aiogram.event - INFO - Update id=427623313 is handled. Duration 363 ms by bot id=7964977314
+2025-04-11 21:22:12,316 - userbot_manager - INFO - Получение клиента для сессии: user1
+2025-04-11 21:22:12,318 - userbot_manager - INFO - Загрузка сессии из S3: bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982/sessions/user1.session
+2025-04-11 21:22:13,843 - userbot_manager - INFO - Сессия успешно загружена из S3 во временный файл: /var/folders/zw/21y55d9x22x4vc_rlqjc2xjr0000gn/T/tmpkp1ikxs_.session
+2025-04-11 21:22:13,847 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-04-11 21:22:14,017 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:22:14,891 - userbot_manager - INFO - Успешное подключение к сессии user1
+2025-04-11 21:22:15,082 - userbot_manager - INFO - Юзербот https://bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982.s3.us-east-1.amazonaws.com/sessions/user1.session доступен. ID: 7785962229, Имя: Андрей
+2025-04-11 21:22:15,082 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-04-11 21:22:15,084 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:22:15,850 - userbot_manager - INFO - Получение клиента для сессии: user1
+2025-04-11 21:22:15,851 - userbot_manager - INFO - Загрузка сессии из S3: bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982/sessions/user1.session
+2025-04-11 21:22:16,371 - userbot_manager - INFO - Сессия успешно загружена из S3 во временный файл: /var/folders/zw/21y55d9x22x4vc_rlqjc2xjr0000gn/T/tmp6trwcnn_.session
+2025-04-11 21:22:16,373 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-04-11 21:22:16,540 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:22:17,516 - userbot_manager - INFO - Успешное подключение к сессии user1
+2025-04-11 21:22:17,954 - userbot_manager - INFO - Обновлен профиль для юзербота https://bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982.s3.us-east-1.amazonaws.com/sessions/user1.session
+2025-04-11 21:22:17,955 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-04-11 21:22:17,957 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-04-11 21:22:19,291 - aiogram.event - INFO - Update id=427623314 is handled. Duration 7732 ms by bot id=7964977314
+2025-04-11 21:22:31,589 - userbot_manager - INFO - Получение клиента для сессии: павел дуров
+2025-04-11 21:22:31,590 - userbot_manager - INFO - Загрузка сессии из S3: bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982/sessions/павел дуров.session
+2025-04-11 21:22:32,646 - userbot_manager - ERROR - Ошибка при загрузке сессии из S3: An error occurred (404) when calling the HeadObject operation: Not Found
+2025-04-11 21:22:32,646 - userbot_manager - WARNING - Локальный файл сессии 'павел дуров.session' не найден
+2025-04-11 21:22:32,647 - userbot_manager - ERROR - Файл сессии для павел дуров не найден
+2025-04-11 21:22:32,928 - aiogram.event - INFO - Update id=427623315 is handled. Duration 2867 ms by bot id=7964977314
+2025-04-11 21:37:37,748 - aiogram.dispatcher - WARNING - Received SIGINT signal
+2025-04-11 21:37:37,777 - aiogram.dispatcher - INFO - Polling stopped for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 21:37:37,778 - aiogram.dispatcher - INFO - Polling stopped
+2025-04-11 21:45:39,235 - telethon.crypto.aes - INFO - libssl detected, it will be used for encryption
+2025-04-11 21:45:40,350 - userbot_manager - INFO - S3 клиент инициализирован для бакета bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982
+2025-04-11 21:45:40,472 - __main__ - INFO - Запуск бота...
+2025-04-11 21:45:40,472 - __main__ - INFO - Токен бота получен, первые 5 символов: 79649...
+2025-04-11 21:45:45,684 - __main__ - INFO - Подключение к БД успешно: 1
+2025-04-11 21:45:45,992 - __main__ - INFO - Начинаю поллинг бота...
+2025-04-11 21:45:45,993 - aiogram.dispatcher - INFO - Start polling
+2025-04-11 21:45:46,694 - aiogram.dispatcher - INFO - Run polling for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-11 21:46:09,814 - aiogram.event - INFO - Update id=427623316 is handled. Duration 1331 ms by bot id=7964977314
+2025-04-11 21:46:36,081 - aiogram.event - INFO - Update id=427623317 is handled. Duration 1664 ms by bot id=7964977314
+2025-04-11 21:46:43,767 - aiogram.event - INFO - Update id=427623318 is handled. Duration 6460 ms by bot id=7964977314
+2025-04-11 21:46:46,099 - aiogram.event - INFO - Update id=427623319 is handled. Duration 251 ms by bot id=7964977314
+2025-04-11 21:46:49,148 - aiogram.event - INFO - Update id=427623320 is handled. Duration 218 ms by bot id=7964977314
+2025-04-11 21:46:54,529 - userbot_manager - INFO - Получение клиента для сессии: павел дуров
+2025-04-11 21:46:54,538 - userbot_manager - INFO - Загрузка сессии из S3: bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982/sessions/павел дуров.session
+2025-04-11 21:46:55,520 - userbot_manager - ERROR - Ошибка при загрузке сессии из S3: An error occurred (404) when calling the HeadObject operation: Not Found
+2025-04-11 21:46:55,521 - userbot_manager - WARNING - Локальный файл сессии 'павел дуров.session' не найден
+2025-04-11 21:46:55,521 - userbot_manager - ERROR - Файл сессии для павел дуров не найден
+2025-04-11 21:46:56,789 - aiogram.event - INFO - Update id=427623321 is handled. Duration 3076 ms by bot id=7964977314
+2025-04-11 21:47:42,999 - aiogram.event - INFO - Update id=427623322 is handled. Duration 1696 ms by bot id=7964977314
+2025-04-11 21:47:48,351 - aiogram.event - INFO - Update id=427623323 is handled. Duration 4426 ms by bot id=7964977314
+2025-04-11 21:47:51,034 - aiogram.event - INFO - Update id=427623324 is handled. Duration 257 ms by bot id=7964977314
+2025-04-11 21:47:52,681 - aiogram.event - INFO - Update id=427623325 is handled. Duration 222 ms by bot id=7964977314
+2025-04-11 21:47:55,080 - userbot_manager - INFO - Получение клиента для сессии: павел дуров
+2025-04-11 21:47:55,082 - userbot_manager - INFO - Загрузка сессии из S3: bucketeer-65d6b8b5-5b16-4359-884f-e2e88d687982/sessions/павел дуров.session
+2025-04-11 21:47:56,203 - userbot_manager - ERROR - Ошибка при загрузке сессии из S3: An error occurred (404) when calling the HeadObject operation: Not Found
+2025-04-11 21:47:56,205 - userbot_manager - WARNING - Локальный файл сессии 'павел дуров.session' не найден
+2025-04-11 21:47:56,205 - userbot_manager - ERROR - Файл сессии для павел дуров не найден
+2025-04-11 21:47:57,609 - aiogram.event - INFO - Update id=427623326 is handled. Duration 3257 ms by bot id=7964977314
+2025-04-11 22:03:57,252 - aiogram.event - INFO - Update id=427623327 is handled. Duration 1319 ms by bot id=7964977314
+2025-04-11 22:12:44,162 - aiogram.event - INFO - Update id=427623328 is handled. Duration 931 ms by bot id=7964977314
+2025-04-12 17:58:44,541 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 60] Operation timed out
+2025-04-12 17:58:44,592 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7964977314)
+2025-04-12 17:59:18,031 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 7964977314)
+2025-04-12 18:00:41,624 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-04-12 18:00:41,624 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7964977314)
+2025-04-12 18:01:45,659 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+2025-04-12 18:01:45,660 - aiogram.dispatcher - WARNING - Sleep for 1.462887 seconds and try again... (tryings = 1, bot id = 7964977314)
+2025-04-12 18:02:49,164 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+2025-04-12 18:02:49,169 - aiogram.dispatcher - WARNING - Sleep for 2.005360 seconds and try again... (tryings = 2, bot id = 7964977314)
+2025-04-12 18:03:11,211 - aiogram.dispatcher - INFO - Connection established (tryings = 3, bot id = 7964977314)
+2025-04-12 18:04:21,627 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-04-12 18:04:21,631 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7964977314)
+2025-04-12 18:04:59,133 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 7964977314)
+2025-04-12 18:09:39,631 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-04-12 18:09:39,635 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7964977314)
+2025-04-12 18:10:00,932 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 7964977314)
+2025-04-12 18:11:33,631 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-04-12 18:11:33,632 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7964977314)
+2025-04-12 18:12:45,634 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-04-12 18:12:45,636 - aiogram.dispatcher - WARNING - Sleep for 1.243114 seconds and try again... (tryings = 1, bot id = 7964977314)
+2025-04-12 18:13:04,013 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 7964977314)
+2025-04-12 18:14:30,579 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-04-12 18:14:30,580 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7964977314)
+2025-04-12 18:14:42,485 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 7964977314)
+2025-04-12 22:39:18,551 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-04-12 22:39:18,566 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7964977314)
+2025-04-12 22:40:46,128 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [None]
+2025-04-12 22:40:46,136 - aiogram.dispatcher - WARNING - Sleep for 1.136251 seconds and try again... (tryings = 1, bot id = 7964977314)
+2025-04-12 22:42:01,824 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-04-12 22:42:01,825 - aiogram.dispatcher - WARNING - Sleep for 1.564718 seconds and try again... (tryings = 2, bot id = 7964977314)
+2025-04-12 22:43:37,992 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-04-12 22:43:37,993 - aiogram.dispatcher - WARNING - Sleep for 1.972666 seconds and try again... (tryings = 3, bot id = 7964977314)
+2025-04-12 22:43:50,475 - aiogram.dispatcher - INFO - Connection established (tryings = 4, bot id = 7964977314)
+2025-04-12 23:56:27,225 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-04-12 23:56:27,227 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7964977314)
+2025-04-12 23:58:10,200 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-04-12 23:58:10,201 - aiogram.dispatcher - WARNING - Sleep for 1.408875 seconds and try again... (tryings = 1, bot id = 7964977314)
+2025-04-12 23:58:37,417 - aiogram.dispatcher - INFO - Connection established (tryings = 2, bot id = 7964977314)
+2025-04-13 00:00:13,653 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-04-13 00:00:13,655 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7964977314)
+2025-04-13 00:00:26,464 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 7964977314)
+2025-04-13 09:18:15,641 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-04-13 09:18:15,664 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7964977314)
+2025-04-13 09:18:27,540 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 7964977314)
+2025-04-13 09:25:11,461 - aiogram.dispatcher - WARNING - Received SIGINT signal
+2025-04-13 09:25:11,510 - aiogram.dispatcher - INFO - Polling stopped for bot @aiautocombot id=7964977314 - 'autocom'
+2025-04-13 09:25:11,512 - aiogram.dispatcher - INFO - Polling stopped
